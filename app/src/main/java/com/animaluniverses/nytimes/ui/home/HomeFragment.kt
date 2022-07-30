@@ -1,5 +1,6 @@
 package com.animaluniverses.nytimes.ui.home
 
+import android.os.Bundle
 import androidx.navigation.fragment.findNavController
 import com.animaluniverses.nytimes.base.BaseFragment
 import com.animaluniverses.nytimes.databinding.FragmentHomeBinding
@@ -16,9 +17,13 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         }
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        homeViewModel.fetchArticlesList()
+    }
+
     override fun onBind() {
         binding.articlesRV.adapter = articleAdapter
-        homeViewModel.fetchArticlesList()
 
         homeViewModel.loading.observe(viewLifecycleOwner){
             loading(it)

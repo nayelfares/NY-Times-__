@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.animaluniverses.nytimes.data.data_classes.Article
 import com.animaluniverses.nytimes.databinding.ItemArticleBinding
-import com.animaluniverses.nytimes.loadImageUrl
 
 
 class ArticleAdapter(val onClick: (item:Article) -> Unit) :

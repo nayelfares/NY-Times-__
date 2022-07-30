@@ -17,6 +17,7 @@ class DataBindingHelper {
             Glide.with(view.context)
                 .load(url)
                 .placeholder(circularProgressDrawable)
+                .error(R.mipmap.error)
                 .into(view)
         }
 
