@@ -40,17 +40,8 @@ class ArticleAdapter(val onClick: (item:Article) -> Unit) :
 
     override fun onBindViewHolder(holder: ArticleViewHolder, position: Int) {
         val article = getItem(position)
-        article.let {
-            holder.binding.txtTitle.text = it.title
-            holder.binding.txtByline.text = it.byline
-            holder.binding.txtPublishedDate.text = it.published_date
-
-            it.media?.forEach { media ->
-                media.metadata?.forEach { mediaMetaData ->
-                    holder.binding.imgThumb.loadImageUrl(mediaMetaData.url)
-                }
-            }
-        }
+        holder.binding.article = article
+        holder.binding.executePendingBindings()
         holder.binding.root.setOnClickListener { onClick(article) }
     }
 

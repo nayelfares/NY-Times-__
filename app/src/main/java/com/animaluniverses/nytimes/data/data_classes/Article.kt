@@ -16,4 +16,12 @@ data class Article(
     var title: String?,
     var description: String?,
     var media: List<Media>?= null
-): Parcelable
+): Parcelable{
+    fun getMediaUrl():String{
+        return  media?.firstOrNull()?.metadata?.firstOrNull()?.url ?: ""
+    }
+
+    fun getCaption():String{
+        return media?.firstOrNull()?.caption?:""
+    }
+}

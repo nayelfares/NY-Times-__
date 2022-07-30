@@ -30,6 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="fitXY"
+                app:imageUrl="@{article.getMediaUrl()}"
                 android:src="@mipmap/ic_launcher" />
 
         </androidx.cardview.widget.CardView>
@@ -41,6 +42,7 @@
             android:maxLines="1"
             android:paddingStart="20dp"
             android:paddingEnd="0dp"
+            android:text="@{article.title}"
             android:singleLine="true"
             android:textColor="@android:color/black"
             android:textSize="18sp"
@@ -56,6 +58,7 @@
             android:layout_height="wrap_content"
             android:maxLines="1"
             android:paddingStart="20dp"
+            android:text="@{article.byline}"
             android:paddingEnd="0dp"
             android:singleLine="true"
             android:textAllCaps="true"
@@ -72,6 +75,7 @@
             android:layout_height="wrap_content"
             android:gravity="end"
             android:paddingStart="20dp"
+            android:text="@{article.published_date}"
             android:paddingEnd="0dp"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="@id/card_view"
